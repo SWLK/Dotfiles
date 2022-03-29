@@ -28,7 +28,7 @@
 
 + dmenu
 
-## Leisure Packages
+## QoL Packages
 
 + pfetch
 
@@ -37,4 +37,6 @@
 + unclutter
 
 + qutebrowser
+
++ unclutter
 
