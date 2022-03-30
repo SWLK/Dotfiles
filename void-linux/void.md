@@ -38,7 +38,11 @@
 
 + qutebrowser
 
-+ unclutter
++ tty-clock
+
++ cmatrix
+
++ evtest
 
 ## Installation Notes
 
