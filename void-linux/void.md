@@ -93,3 +93,13 @@
 ### Audio
 
 Remember to add user to audio group to access audio with alsa
+
+### xboxdrv
+
+Tried to get ppsspp to work with built in controller but ended in failure.
+
++ Tried to install sdl2 and sdl2-devel, and I have already installed the sdl equivalent beforehand
+
++ evtest does show controller input, so the controller is detected on events and input devices
+
++ Currently using xboxdrv to emulate keyboard input
