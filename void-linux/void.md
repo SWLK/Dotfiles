@@ -28,6 +28,10 @@
 
 + dmenu
 
++ mesa-dri
+
++ alsa-utils
+
 ## QoL Packages
 
 + pfetch
@@ -43,6 +47,8 @@
 + cmatrix
 
 + evtest
+
++ ppsspp
 
 ## Installation Notes
 
