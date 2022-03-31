@@ -28,6 +28,14 @@
 
 + dmenu
 
++ xrandr
+
++ xset
+
++ xfontsel
+
++ alsa-utils
+
 ## QoL Packages
 
 + pfetch
@@ -42,7 +50,11 @@
 
 + cmatrix
 
++ tty-clock
+
 + evtest
+
++ ppsspp
 
 ## Installation Notes
 
@@ -73,3 +85,7 @@
 + check with `fdisk -l`
 
 + resize the filesystem to match the new size with resize2fs
+
+### Audio
+
+Remember to add user to audio group to access audio with alsa
