@@ -28,12 +28,15 @@
 
 + dmenu
 
-<<<<<<< HEAD
-=======
 + mesa-dri
->>>>>>> refs/remotes/origin/main
 
 + alsa-utils
+
++ xset
+
++ xfontsel
+
++ xrandr
 
 ## QoL Packages
 
@@ -54,6 +57,8 @@
 + evtest
 
 + ppsspp
+
++ xboxdrv
 
 ## Installation Notes
 
