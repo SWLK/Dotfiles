@@ -28,11 +28,10 @@
 
 + dmenu
 
-+ xrandr
-
-+ xset
-
-+ xfontsel
+<<<<<<< HEAD
+=======
++ mesa-dri
+>>>>>>> refs/remotes/origin/main
 
 + alsa-utils
 
