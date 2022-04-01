@@ -60,6 +60,8 @@
 
 + xboxdrv
 
++ retroarch
+
 ## Installation Notes
 
 ### Changing live image size
@@ -103,3 +105,5 @@ Tried to get ppsspp to work with built in controller but ended in failure.
 + evtest does show controller input, so the controller is detected on events and input devices
 
 + Currently using xboxdrv to emulate keyboard input
+
+** Turns out I'm stupid and didn't add my user to `input` group! **
