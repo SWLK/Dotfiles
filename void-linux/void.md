@@ -38,6 +38,16 @@
 
 + xrandr
 
++ AlsaMixer.app
+
++ elogind
+
++ iwd
+
++ python3-devel
+
++ python3-RPi.GPIO
+
 ## QoL Packages
 
 + pfetch
@@ -62,7 +72,19 @@
 
 + retroarch
 
++ AlsaMixer.app
+
++ gkill
+
 ## Installation Notes
+
+### System Services
+
+Note to self:
+
++ with no systemd in void and using runit, enable services with symlinks
+
+`ln -s /etc/ev/service_name /var/service`
 
 ### Changing live image size
 
@@ -107,3 +129,45 @@ Tried to get ppsspp to work with built in controller but ended in failure.
 + Currently using xboxdrv to emulate keyboard input
 
 ** Turns out I'm stupid and didn't add my user to `input` group! **
+
+### Safe Shutdown
+
+This involves tweaking the files from the python script provided in the repository and adding an entry to rc.local.
+
++ The safeshutdown.py script will be in the repository
+
++ My rc.local file will also be in the repository
+
++ Instead of getting the RPi.GPIO module from pip, get it from package manager instead, since it has to be system-wide and runnable from root
+
+### Booting directly into i3
+
+Encountered a variety of problems, but also learned a lot in the process.
+
+! rc.local runs in stage 2 and therefore before services are started
+
++ There's no systemd in void, therefore I had to deal with elogind, which was a pain.
+
+	+ elogind was supposed to set XDG environment, so I could detect the tty I'm booting in, but that turns out to not be required
+
+	+ also learned that killall doesn't exist in void. I was going to write a script to kill elogind as root after it sets the environment, since it keeps on reinitializing and fills the tty.
+
+There are 3 files that need to be dealt with, which are `agetty-tty1/conf`, `~/.bash_profile` and `.xinitrc`, and I'll include them all here.
+
+It's funny to think that this was what the case was meant to be used for, but how much of a pain it was to get this to work on top of void and to suit my needs/vision, but I'm glad that it's done.
+
+### To Do
+
++ bluetooth (probably with bluetoothd and bluetoothctl)
+
++ rust lang
+
+	+ and other langs I'm planning to use, toolkits blah blah
+
++ my own script so I could run scripts with built-in controller
+
+	+ if I have a ton of free time
+
++ some way to cut off the annoying sleep functionality button
+
+	+ it does nothing besides turning off the screen every 20 minutes and fucking up your day, plus mess up your screen offset
