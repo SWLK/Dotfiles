@@ -49,7 +49,7 @@
 *.color15:      #baba9e
 
 ! font
-Urxvt*font: xft:TamzenForPowerline:size=10
+URxvt*font: xft:TamzenForPowerline:size=10
 URxvt*boldFont:
 URxvt*italicFont:
 URxvt*boldItalicFont:
