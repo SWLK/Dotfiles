@@ -28,6 +28,8 @@
 + socklog-void
 + rust
 + cargo
++ rpi-userland
++ rpi-userland-devel
 
 ## Services
 
