@@ -22,7 +22,6 @@
 + xset
 + xfontsel
 + xrandr
-+ AlsaMixer.app
 + iwd
 + python3-devel
 + python3-RPi.GPIO
@@ -48,29 +47,17 @@
 ## QoL Packages
 
 + pfetch
-
 + onefetch
-
 + unclutter
-
 + qutebrowser
-
 + tty-clock
-
 + cmatrix
-
 + tty-clock
-
 + evtest
-
 + ppsspp
-
 + xboxdrv
-
 + retroarch
-
 + AlsaMixer.app
-
 + gkill
 
 ## Installation Notes
@@ -82,6 +69,12 @@ Note to self:
 + with no systemd in void and using runit, enable services with symlinks
 
 `ln -s /etc/ev/service_name /var/service`
+
+### Changing system time
+
+Since EST is such a pain in the ass to config, I'll list the exact timezone here
+
+`ln -sf /usr/share/zoneinfo/EST5EDT /etc/localtime`
 
 ### Changing live image size
 
