@@ -3,50 +3,47 @@
 ## Important Packages
 
 + neovim
-
 + git
-
 + htop
-
 + curl
-
 + gcc
-
 + make
-
++ cmake
 + xorg-minimal
-
 + xorg-fonts
-
 + xrdb
-
 + i3
-
 + i3status
-
 + rxvt-unicode
-
 + dmenu
-
 + mesa-dri
-
++ mesa-vulkan-broadcom
 + alsa-utils
-
 + xset
-
 + xfontsel
-
 + xrandr
-
 + AlsaMixer.app
-
-+ elogind
-
 + iwd
-
 + python3-devel
-
 + python3-RPi.GPIO
++ socklog-void
++ rust
++ cargo
+
+## Services
+
++ acpid
++ chronyd
++ dbus
++ dhcpcd
++ iwd
++ nanoklogd
++ ntpd
++ seatd
++ socklog-unix
++ sshd
++ udevd
++ uuidd
 
 ## QoL Packages
 
@@ -156,6 +153,18 @@ There are 3 files that need to be dealt with, which are `agetty-tty1/conf`, `~/.
 
 It's funny to think that this was what the case was meant to be used for, but how much of a pain it was to get this to work on top of void and to suit my needs/vision, but I'm glad that it's done.
 
+### Opengl async flip problem
+
+Encountered an I/O problem that caused me to not be able to sudo into poweroff.
+
+	+ After checking with `dmesg` and `svlogtail`, it seems that the main problem would be due that the kern.err `async flips are not allowed` originating from vc4 driver flooding output.
+	
+	+ since I start ppsspp on boot, the error had something to do with ppsspp. This was confirmed by exiting and relaunch ppsspp after boot, where the same messages start popping up again.
+	
+	+ since after some research this seems to have something to do with X and video drivers, I've installed additional mesa drivers and also the mesa driver for vulkan
+	
+	+ after switching the ppsspp backend to vulkan, the kern.err has stopped.
+
 ### To Do
 
 + bluetooth (probably with bluetoothd and bluetoothctl)
@@ -168,6 +177,12 @@ It's funny to think that this was what the case was meant to be used for, but ho
 
 	+ if I have a ton of free time
 
+	+ this is possible since modules and drivers could be ran on boot, therefore it is possible to set up xboxdrv with a config for menu selection, then depending on the scenario rmmod and modprobe xpad later.
+
+	+ it shouldn't be too hard to write my own startup script that runs somewhere in stage two with rc.local (or in rc.local)
+
 + some way to cut off the annoying sleep functionality button
 
 	+ it does nothing besides turning off the screen every 20 minutes and fucking up your day, plus mess up your screen offset
+
+	+ might have to deal with rpi gpio, though that is not a guaranteed fix and depends on the pcb and how the buttons are configurated on the hat
